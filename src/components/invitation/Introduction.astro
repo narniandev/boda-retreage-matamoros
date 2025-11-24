@@ -1,16 +1,17 @@
 ---
 interface Props {
   guestName: string;
-  guestType?: 'male' | 'female' | 'group' | string;
+  guestType?: string; // Simplificamos el tipo para evitar conflictos
   guestsCount: number;
 }
 
 const { guestName, guestType = 'group', guestsCount } = Astro.props;
 
-// Lógica de saludo
 const getGreeting = (type: string) => {
-  if (type === 'male') return 'Querido';
-  if (type === 'female') return 'Querida';
+  // Normalizamos a minusculas para evitar errores de tipeo en el JSON
+  const safeType = type.toLowerCase();
+  if (safeType === 'male') return 'Querido';
+  if (safeType === 'female') return 'Querida';
   return 'Queridos';
 };
 ---
@@ -31,7 +32,7 @@ const getGreeting = (type: string) => {
 
   <div class="inline-block border-t border-b border-wedding-soft/30 py-2 px-6">
     <p class="font-cinzel font-bold text-wedding-soft text-xs uppercase tracking-widest">
-      Reservado para {guestsCount} {guestsCount === 1 ? 'persona' : 'personas'}
+      Reservado para <span class="text-wedding-secondary text-lg mx-1">{guestsCount}</span> {guestsCount === 1 ? 'persona' : 'personas'}
     </p>
   </div>
 

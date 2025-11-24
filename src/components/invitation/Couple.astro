@@ -1,32 +1,32 @@
 ---
 import { SITE_CONFIG } from '../../data/config';
-// TODO: Reemplazar src por imports reales de assets/ cuando existan las imagenes
 ---
 
 <section class="py-16 px-6 bg-white flex flex-col items-center">
-  <div class="flex gap-6 justify-center mb-6">
-    <div class="flex flex-col items-center gap-2">
-      <div class="w-32 h-32 rounded-full bg-gray-200 overflow-hidden border-2 border-wedding-soft">
-         </div>
-      <span class="font-serif text-lg text-wedding-primary">{SITE_CONFIG.couple.groom}</span>
-    </div>
-    <div class="flex flex-col items-center gap-2">
-      <div class="w-32 h-32 rounded-full bg-gray-200 overflow-hidden border-2 border-wedding-soft">
-         </div>
-      <span class="font-serif text-lg text-wedding-primary">{SITE_CONFIG.couple.bride}</span>
-    </div>
+  <div class="mb-8 w-64 h-64 relative rounded-full overflow-hidden border-4 border-wedding-soft/30 shadow-xl">
+    <img 
+      src={`${import.meta.env.BASE_URL}images/novios.jpg`} 
+      alt="David y Abigail" 
+      class="w-full h-full object-cover"
+    />
   </div>
 
-  <div class="mt-10 text-center">
-    <p class="text-sm mb-4 text-wedding-secondary">Con la bendición de nuestros padres</p>
-    <div class="flex flex-col md:flex-row gap-8 text-wedding-primary">
+  <div class="flex gap-4 justify-center items-center mb-10">
+    <span class="font-serif text-2xl text-wedding-primary">{SITE_CONFIG.couple.groom}</span>
+    <span class="font-italianno text-4xl text-wedding-secondary">&</span>
+    <span class="font-serif text-2xl text-wedding-primary">{SITE_CONFIG.couple.bride}</span>
+  </div>
+
+  <div class="mt-4 text-center border-t border-wedding-light pt-8 w-full max-w-lg">
+    <p class="text-sm mb-6 text-wedding-secondary uppercase tracking-widest">Con la bendición de nuestros padres</p>
+    <div class="flex flex-col md:flex-row justify-center gap-8 text-wedding-primary">
       <div>
         <h3 class="font-serif text-xl">{SITE_CONFIG.couple.parentsGroom}</h3>
-        <p class="text-sm font-light italic mb-2 text-wedding-secondary">Padres del Novio</p>
+        <p class="text-xs font-light italic mt-1 text-gray-400">Padres del Novio</p>
       </div>
       <div>
         <h3 class="font-serif text-xl">{SITE_CONFIG.couple.parentsBride}</h3>
-        <p class="text-sm font-light italic mb-2 text-wedding-secondary">Padres de la Novia</p>
+        <p class="text-xs font-light italic mt-1 text-gray-400">Padres de la Novia</p>
       </div>
     </div>
   </div>

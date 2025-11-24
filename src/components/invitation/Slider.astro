@@ -1,29 +1,48 @@
 ---
-// Array temporal. Luego reemplazarás con tus imports de assets
-const slides = Array(10).fill(null); 
+const images = [
+  'images/novios_1.jpg',
+  'images/novios_2.jpg',
+  'images/novios_3.jpg',
+  'images/novios_4.jpg',
+  'images/novios_5.jpg'
+];
 ---
 
-<section class="overflow-hidden bg-wedding-primary py-4">
-  <div class="slider-track flex gap-4 w-[calc(200px*20)]"> {slides.map((_, i) => (
-      <div class="w-[200px] h-[300px] bg-wedding-light shrink-0 rounded-md opacity-80">
-        <div class="w-full h-full flex items-center justify-center text-wedding-primary">Foto {i+1}</div>
+<section class="overflow-hidden bg-wedding-primary py-8">
+  <div class="slider-track flex gap-4 w-[calc(216px*10)]"> 
+    
+    {images.map((img) => (
+      <div class="w-[200px] h-[300px] bg-gray-800 shrink-0 rounded-md overflow-hidden pointer-events-none select-none">
+        <img 
+          src={`${import.meta.env.BASE_URL}${img}`} 
+          alt="Foto novios" 
+          class="w-full h-full object-cover grayscale opacity-70 hover:opacity-70"
+          loading="lazy"
+        />
       </div>
     ))}
-    {slides.map((_, i) => (
-      <div class="w-[200px] h-[300px] bg-wedding-light shrink-0 rounded-md opacity-80">
-         <div class="w-full h-full flex items-center justify-center text-wedding-primary">Foto {i+1}</div>
+    
+    {images.map((img) => (
+      <div class="w-[200px] h-[300px] bg-gray-800 shrink-0 rounded-md overflow-hidden pointer-events-none select-none">
+         <img 
+          src={`${import.meta.env.BASE_URL}${img}`} 
+          alt="Foto novios" 
+          class="w-full h-full object-cover grayscale opacity-70 hover:opacity-70"
+          loading="lazy"
+        />
       </div>
     ))}
+
   </div>
 </section>
 
 <style>
   .slider-track {
-    animation: scroll 40s linear infinite;
+    animation: scroll 20s linear infinite; /* Más rápido al ser menos fotos */
   }
   
   @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-200px * 10 - 1rem * 10)); } /* Mueve el ancho de 10 slides + gap */
+    100% { transform: translateX(calc(-200px * 5 - 1rem * 5)); } 
   }
 </style>

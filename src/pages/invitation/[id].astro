@@ -33,7 +33,13 @@ const { guest } = Astro.props;
   <main class="w-full overflow-hidden">
     <HeroInv />
     <BibleQuote />
-    <Introduction guestName={guest.name} />
+    
+    <Introduction 
+      guestName={guest.name} 
+      guestType={guest.type} 
+      guestsCount={guest.guests} 
+    />
+
     <Couple />
     <DateCountdown />
     <Location />
@@ -41,8 +47,12 @@ const { guest } = Astro.props;
     <DistanceQuote />
     
     <section class="py-10 bg-wedding-light text-center">
-      <p class="uppercase tracking-widest text-xs text-wedding-secondary mb-2">Pases Reservados</p>
-      <p class="text-3xl font-serif text-wedding-primary">{guest.guests} {guest.guests === 1 ? 'Persona' : 'Personas'}</p>
+      <p class="uppercase tracking-widest text-xs text-wedding-secondary mb-2">
+        {guest.guests === 1 ? 'Pase Reservado' : 'Pases Reservados'}
+      </p>
+      <p class="text-3xl font-serif text-wedding-primary">
+        {guest.guests} {guest.guests === 1 ? 'Persona' : 'Personas'}
+      </p>
     </section>
 
     <Rsvp guestName={guest.name} />

@@ -9,7 +9,9 @@ export const COLORS = {
 export const SITE_CONFIG = {
   couple: {
     groom: "David Retreage",
+    groom_name: "David",
     bride: "Abigail Matamoros",
+    bride_name: "Abigail",
     parentsGroom: "Joseph Retreage y Marta Montoya",
     parentsBride: "Victor Matamoros y Onelia Chavarria"
   },
