@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
 
-  site: 'https://github.com/narniandev',
+  site: 'https://narniandev.github.io',
   base: '/boda-retreage-matamoros',
 
   vite: {
