@@ -1,0 +1,19 @@
+---
+import Button from '../common/Button.astro';
+import { SITE_CONFIG } from '../../data/config';
+---
+
+<footer class="py-16 px-6 bg-wedding-primary text-wedding-light text-center">
+  <div class="mb-10">
+    <h3 class="uppercase tracking-widest text-sm mb-2">Código de Vestimenta</h3>
+    <p class="font-serif italic text-xl">Calzado ideal para grama</p>
+  </div>
+
+  <div class="mb-12">
+    <p class="mb-4 text-sm opacity-90">Comparte tus fotos con nosotros en Dots</p>
+    <Button href={SITE_CONFIG.links.dotsApp} text="Ver en Dots" target="_blank" />
+  </div>
+
+  <h2 class="font-serif text-3xl md:text-4xl mb-4">¡Los esperamos!</h2>
+  <p class="text-xs uppercase tracking-widest opacity-60">David & Abigail 2025</p>
+</footer>

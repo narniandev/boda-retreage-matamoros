@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import guestsData from '../../data/guests.json';
+
+// Componentes
+import Loader from '../../components/common/Loader.astro';
+import HeroInv from '../../components/invitation/HeroInv.astro';
+import BibleQuote from '../../components/invitation/BibleQuote.astro';
+import Introduction from '../../components/invitation/Introduction.astro';
+import Couple from '../../components/invitation/Couple.astro';
+import DateCountdown from '../../components/invitation/DateCountdown.astro';
+import Location from '../../components/invitation/Location.astro';
+import Itinerary from '../../components/invitation/Itinerary.astro';
+import DistanceQuote from '../../components/invitation/DistanceQuote.astro';
+import Rsvp from '../../components/invitation/Rsvp.astro';
+import Gifts from '../../components/invitation/Gifts.astro';
+import Slider from '../../components/invitation/Slider.astro';
+import Footer from '../../components/invitation/Footer.astro';
+
+export async function getStaticPaths() {
+  return guestsData.map((guest) => ({
+    params: { id: guest.id },
+    props: { guest },
+  }));
+}
+
+const { guest } = Astro.props;
+---
+
+<Layout title={`Invitación para ${guest.name}`}>
+  <Loader />
+  
+  <main class="w-full overflow-hidden">
+    <HeroInv />
+    <BibleQuote />
+    <Introduction guestName={guest.name} />
+    <Couple />
+    <DateCountdown />
+    <Location />
+    <Itinerary />
+    <DistanceQuote />
+    
+    <section class="py-10 bg-wedding-light text-center">
+      <p class="uppercase tracking-widest text-xs text-wedding-secondary mb-2">Pases Reservados</p>
+      <p class="text-3xl font-serif text-wedding-primary">{guest.guests} {guest.guests === 1 ? 'Persona' : 'Personas'}</p>
+    </section>
+
+    <Rsvp guestName={guest.name} />
+    <Gifts />
+    <Slider />
+    <Footer />
+  </main>
+</Layout>

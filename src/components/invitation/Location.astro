@@ -1,0 +1,18 @@
+---
+import Button from '../common/Button.astro';
+import { SITE_CONFIG } from '../../data/config';
+---
+
+<section class="py-16 px-6 bg-wedding-light text-center text-wedding-primary">
+  <h2 class="font-serif text-3xl mb-6">Lugar</h2>
+  <div class="mb-8">
+    <h3 class="text-xl font-bold uppercase tracking-wide">{SITE_CONFIG.location.city}</h3>
+    <p class="text-lg mt-2">{SITE_CONFIG.location.name}</p>
+  </div>
+  
+  <Button 
+    href={SITE_CONFIG.location.mapUrl || "https://maps.google.com"} 
+    text="Ver Ubicación" 
+    target="_blank"
+  />
+</section>

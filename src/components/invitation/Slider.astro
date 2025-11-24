@@ -1,0 +1,29 @@
+---
+// Array temporal. Luego reemplazarás con tus imports de assets
+const slides = Array(10).fill(null); 
+---
+
+<section class="overflow-hidden bg-wedding-primary py-4">
+  <div class="slider-track flex gap-4 w-[calc(200px*20)]"> {slides.map((_, i) => (
+      <div class="w-[200px] h-[300px] bg-wedding-light shrink-0 rounded-md opacity-80">
+        <div class="w-full h-full flex items-center justify-center text-wedding-primary">Foto {i+1}</div>
+      </div>
+    ))}
+    {slides.map((_, i) => (
+      <div class="w-[200px] h-[300px] bg-wedding-light shrink-0 rounded-md opacity-80">
+         <div class="w-full h-full flex items-center justify-center text-wedding-primary">Foto {i+1}</div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .slider-track {
+    animation: scroll 40s linear infinite;
+  }
+  
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-200px * 10 - 1rem * 10)); } /* Mueve el ancho de 10 slides + gap */
+  }
+</style>

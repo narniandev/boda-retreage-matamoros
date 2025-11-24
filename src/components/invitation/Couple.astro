@@ -1,0 +1,33 @@
+---
+import { SITE_CONFIG } from '../../data/config';
+// TODO: Reemplazar src por imports reales de assets/ cuando existan las imagenes
+---
+
+<section class="py-16 px-6 bg-white flex flex-col items-center">
+  <div class="flex gap-6 justify-center mb-6">
+    <div class="flex flex-col items-center gap-2">
+      <div class="w-32 h-32 rounded-full bg-gray-200 overflow-hidden border-2 border-wedding-soft">
+         </div>
+      <span class="font-serif text-lg text-wedding-primary">{SITE_CONFIG.couple.groom}</span>
+    </div>
+    <div class="flex flex-col items-center gap-2">
+      <div class="w-32 h-32 rounded-full bg-gray-200 overflow-hidden border-2 border-wedding-soft">
+         </div>
+      <span class="font-serif text-lg text-wedding-primary">{SITE_CONFIG.couple.bride}</span>
+    </div>
+  </div>
+
+  <div class="mt-10 text-center">
+    <p class="text-sm mb-4 text-wedding-secondary">Con la bendición de nuestros padres</p>
+    <div class="flex flex-col md:flex-row gap-8 text-wedding-primary">
+      <div>
+        <h3 class="font-serif text-xl">{SITE_CONFIG.couple.parentsGroom}</h3>
+        <p class="text-sm font-light italic mb-2 text-wedding-secondary">Padres del Novio</p>
+      </div>
+      <div>
+        <h3 class="font-serif text-xl">{SITE_CONFIG.couple.parentsBride}</h3>
+        <p class="text-sm font-light italic mb-2 text-wedding-secondary">Padres de la Novia</p>
+      </div>
+    </div>
+  </div>
+</section>

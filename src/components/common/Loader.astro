@@ -1,0 +1,26 @@
+<div id="preloader" class="fixed inset-0 z-[100] flex items-center justify-center bg-wedding-light transition-opacity duration-1000">
+  <div class="relative w-48 h-48 flex items-center justify-center animate-pulse">
+    <div class="absolute inset-0 border border-wedding-soft/50 rounded-full scale-90"></div>
+    <div class="absolute inset-0 border border-wedding-primary/20 rounded-full scale-100"></div>
+
+    <div class="relative w-32 h-32 text-wedding-primary font-fleur">
+      <span class="absolute top-0 left-0 text-7xl leading-none transform -translate-x-2 -translate-y-2">D</span>
+      
+      <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl opacity-60 font-cinzel">&</span>
+      
+      <span class="absolute bottom-0 right-0 text-7xl leading-none transform translate-x-2 translate-y-2">A</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('preloader');
+    if (loader) {
+      setTimeout(() => {
+        loader.style.opacity = '0';
+        setTimeout(() => loader.remove(), 1000);
+      }, 1500);
+    }
+  });
+</script>

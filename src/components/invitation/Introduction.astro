@@ -1,0 +1,38 @@
+---
+interface Props {
+  guestName: string;
+  guestType?: 'male' | 'female' | 'group' | string;
+  guestsCount: number;
+}
+
+const { guestName, guestType = 'group', guestsCount } = Astro.props;
+
+// Lógica de saludo
+const getGreeting = (type: string) => {
+  if (type === 'male') return 'Querido';
+  if (type === 'female') return 'Querida';
+  return 'Queridos';
+};
+---
+
+<section class="relative pt-12 pb-8 px-6 bg-white text-center mt-[-20px] rounded-t-[3rem] z-20 shadow-[-10px_-10px_30px_rgba(0,0,0,0.1)]">
+  
+  <p class="font-cinzel text-gray-500 uppercase tracking-widest text-sm mb-2">
+    {getGreeting(guestType)}
+  </p>
+
+  <h2 class="font-italianno text-6xl md:text-7xl text-wedding-secondary mb-6 leading-tight">
+    {guestName}
+  </h2>
+
+  <p class="font-cinzel text-wedding-primary/80 text-sm md:text-base leading-relaxed max-w-prose mx-auto mb-8">
+    Nos complace invitarlos a celebrar con nosotros el día más especial de nuestras vidas.
+  </p>
+
+  <div class="inline-block border-t border-b border-wedding-soft/30 py-2 px-6">
+    <p class="font-cinzel font-bold text-wedding-soft text-xs uppercase tracking-widest">
+      Reservado para {guestsCount} {guestsCount === 1 ? 'persona' : 'personas'}
+    </p>
+  </div>
+
+</section>

@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-wedding-primary: #420C16;
+  --color-wedding-secondary: #791124;
+  --color-wedding-accent: #657C72;
+  --color-wedding-soft: #D1A39D;
+  --color-wedding-light: #EFE1D6;
+  
+  --font-fleur: "Fleur De Leah", cursive;
+  --font-corinthia: "Corinthia", cursive;
+  --font-italianno: "Italianno", cursive;
+  --font-carattere: "Carattere", cursive;
+  --font-cinzel: "Cinzel", serif;
+}
+
+/* Clases de utilidad para fuentes */
+.font-fleur { font-family: var(--font-fleur); }
+.font-corinthia { font-family: var(--font-corinthia); }
+.font-italianno { font-family: var(--font-italianno); }
+.font-cinzel { font-family: var(--font-cinzel); }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-wedding-light);
+  color: var(--color-wedding-primary);
+  font-family: var(--font-cinzel); /* Fuente base elegante */
+  overflow-x: hidden;
+}
