@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
 
   site: 'https://narniandev.github.io',
-  base: '/boda-retreage-matamoros',
+  base: '/boda-rm',
 
   vite: {
     plugins: [tailwindcss()],
