@@ -1,4 +1,5 @@
-<div class="absolute inset-0 w-full h-full overflow-hidden pointer-events-none bg-black">
+<div class="absolute inset-0 w-full h-full overflow-hidden bg-black z-0">
+  
   <video 
     id="hero-video"
     autoplay 
@@ -7,31 +8,38 @@
     playsinline 
     preload="auto"
     poster="https://res.cloudinary.com/cloudinary-autoshn/image/upload/v1764049262/novios_1_jzckfn.webp"
-    class="absolute inset-0 w-full h-full object-cover z-0 opacity-0 transition-opacity duration-1000"
+    class="absolute inset-0 w-full h-full object-cover z-10"
   >
-    <source src="https://res.cloudinary.com/cloudinary-autoshn/video/upload/v1764049277/bg-boda_cxx3sq.mp4" type="video/mp4" />
+    <source src="https://res.cloudinary.com/cloudinary-autoshn/video/upload/q_auto,f_auto,vc_auto/v1764049277/bg-boda_cxx3sq.mp4" type="video/mp4" />
   </video>
 
   <div 
-    class="absolute inset-0 w-full h-full bg-cover bg-center z-[-1]"
+    class="absolute inset-0 w-full h-full bg-cover bg-center z-0"
     style="background-image: url('https://res.cloudinary.com/cloudinary-autoshn/image/upload/v1764049262/novios_1_jzckfn.webp');"
   >
   </div>
 
-  <div class="absolute inset-0 bg-black/40 z-10"></div>
+  <div class="absolute inset-0 bg-black/40 z-20"></div>
 </div>
 
 <script>
+  // Script de fuerza bruta para móviles
   const video = document.getElementById('hero-video') as HTMLVideoElement;
 
   if (video) {
-    video.addEventListener('canplay', () => {
-      video.classList.remove('opacity-0');
-    });
-    
+    // Forzamos mudo de nuevo por seguridad
     video.muted = true;
-    video.play().catch(() => {
-      console.log("Autoplay bloqueado. Se muestra poster.");
-    });
+    
+    // Intentamos reproducir inmediatamente
+    const playPromise = video.play();
+
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        console.log("Autoplay inicial bloqueado. Esperando interacción.");
+        // Si falla, intentamos de nuevo al primer toque en la pantalla
+        window.addEventListener('click', () => video.play(), { once: true });
+        window.addEventListener('touchstart', () => video.play(), { once: true });
+      });
+    }
   }
 </script>
