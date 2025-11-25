@@ -6,15 +6,15 @@
     muted 
     playsinline 
     preload="auto"
-    poster={`${import.meta.env.BASE_URL}video/poster.jpg`}
+    poster="https://res.cloudinary.com/cloudinary-autoshn/image/upload/v1764049262/novios_1_jzckfn.webp"
     class="absolute inset-0 w-full h-full object-cover z-0 opacity-0 transition-opacity duration-1000"
   >
-    <source src={`${import.meta.env.BASE_URL}video/bg-boda.mp4`} type="video/mp4" />
+    <source src="https://res.cloudinary.com/cloudinary-autoshn/video/upload/v1764049277/bg-boda_cxx3sq.mp4" type="video/mp4" />
   </video>
 
   <div 
     class="absolute inset-0 w-full h-full bg-cover bg-center z-[-1]"
-    style={`background-image: url('${import.meta.env.BASE_URL}video/poster.jpg');`}
+    style="background-image: url('https://res.cloudinary.com/cloudinary-autoshn/image/upload/v1764049262/novios_1_jzckfn.webp');"
   >
   </div>
 
@@ -28,7 +28,7 @@
     video.addEventListener('canplay', () => {
       video.classList.remove('opacity-0');
     });
-
+    
     video.muted = true;
     video.play().catch(() => {
       console.log("Autoplay bloqueado. Se muestra poster.");

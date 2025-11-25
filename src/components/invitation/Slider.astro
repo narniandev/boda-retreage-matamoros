@@ -1,15 +1,15 @@
 ---
 const images = [
-  'images/novios_1.webp',
-  'images/novios_2.webp',
-  'images/novios_3.webp',
-  'images/novios_4.webp',
-  'images/novios_5.webp',
-  'images/novios_6.webp',
-  'images/novios_7.webp',
-  'images/novios_8.webp',
-  'images/novios_9.webp',
-  'images/novios_10.webp'
+  'https://res.cloudinary.com/cloudinary-autoshn/image/upload/v1764049262/novios_1_jzckfn.webp',
+  'https://res.cloudinary.com/cloudinary-autoshn/image/upload/v1764049263/novios_2_oqi2bx.webp',
+  'https://res.cloudinary.com/cloudinary-autoshn/image/upload/v1764049262/novios_3_yfmo01.webp',
+  'https://res.cloudinary.com/cloudinary-autoshn/image/upload/v1764049263/novios_4_pbiwvi.webp',
+  'https://res.cloudinary.com/cloudinary-autoshn/image/upload/v1764049263/novios_5_otcc7h.webp',
+  'https://res.cloudinary.com/cloudinary-autoshn/image/upload/v1764049263/novios_6_kqpf1i.webp',
+  'https://res.cloudinary.com/cloudinary-autoshn/image/upload/v1764049263/novios_7_gmqy6h.webp',
+  'https://res.cloudinary.com/cloudinary-autoshn/image/upload/v1764049263/novios_8_v1bqmh.webp',
+  'https://res.cloudinary.com/cloudinary-autoshn/image/upload/v1764049264/novios_9_wje9mb.webp',
+  'https://res.cloudinary.com/cloudinary-autoshn/image/upload/v1764049264/novios_10_k1gthp.webp'
 ];
 ---
 
@@ -19,7 +19,7 @@ const images = [
     {images.map((img) => (
       <div class="w-[200px] h-[300px] bg-gray-800 shrink-0 rounded-md overflow-hidden pointer-events-none select-none">
         <img 
-          src={`${import.meta.env.BASE_URL}${img}`} 
+          src={img} 
           alt="Foto novios" 
           class="w-full h-full object-cover grayscale opacity-70 hover:opacity-70"
           loading="lazy"
@@ -30,7 +30,7 @@ const images = [
     {images.map((img) => (
       <div class="w-[200px] h-[300px] bg-gray-800 shrink-0 rounded-md overflow-hidden pointer-events-none select-none">
          <img 
-          src={`${import.meta.env.BASE_URL}${img}`} 
+          src={img} 
           alt="Foto novios" 
           class="w-full h-full object-cover grayscale opacity-70 hover:opacity-70"
           loading="lazy"
@@ -43,11 +43,11 @@ const images = [
 
 <style>
   .slider-track {
-    animation: scroll 20s linear infinite; /* Más rápido al ser menos fotos */
+    animation: scroll 30s linear infinite; /* Ajustado a 30s para suavidad con 10 fotos */
   }
   
   @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-200px * 5 - 1rem * 5)); } 
+    100% { transform: translateX(calc(-200px * 10 - 1rem * 10)); } 
   }
 </style>
