@@ -262,5 +262,11 @@
     "name": "Geraldine Retreage y nietas",
     "guests": 4,
     "type": "group"
-  } 
+  },
+  {
+    "id": "jh",
+    "name": "Jose Antonio Henriquez",
+    "guests": 1,
+    "type": "male"
+  }
 ]
